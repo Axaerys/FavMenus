@@ -81,8 +81,8 @@ input[type="number"] {
 
 .scrolldown {
   --color: white;
-  position: absolute;
-  bottom: 1rem;
+  position: relative;
+  top: 1rem;
 }
 
 @keyframes scrolldown-anim {
