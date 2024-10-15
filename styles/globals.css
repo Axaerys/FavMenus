@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baumans:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Hide spinners in Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide spinners in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.td{
+  transition: 0.5s ease;
+}
+.td-sm{
+  transition: 0.25s ease;
+}
+
+
+.gradient-text {
+  position: relative;
+  z-index: 20;
+  font-size: 36px;
+  background: linear-gradient(90deg, #fff,  #49fec8, #49fec8, #fff); /* Repeat the gradient at the end */
+  -webkit-background-clip: text; /* For Safari  3300ff*/
+  -webkit-text-fill-color: transparent; /* For Safari */
+  background-clip: text; /* For other browsers */
+  color: cyan; /* Fallback for browsers that do not support background-clip */
+  
+  /* Animate the gradient */
+  background-size: 300% 100%; /* Make the background larger to allow continuous movement */
+  animation: gradientAnimation 10s linear infinite; /* Infinite, smooth linear animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 300% 50%; /* Start at the left */
+  }
+  100% {
+    background-position: 0% 50%; /* Continuously move to the right */
+  }
+}
+
+
+
+
+
+.input{
+  border-radius: 6px;
+  width: 100%;
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: 0.25s ease;
+  text-align: left;
+}
+
+.input:focus{
+  outline: transparent;
+  background-color: transparent;
+  border-width: 1px;
+  border-color: cyan;
+  color: white;
+}
+
+
+/* scroll animtions */
+
+.scrolldown {
+  --color: white;
+  position: absolute;
+  bottom: 1rem;
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+
+.chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevrondown {
+  position: relative;
+  border: solid cyan;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+  animation: pulse54012 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+  animation: pulse54012 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse54012 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+/* tailwind rules */
+.app {
+    @apply relative z-10 flex flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  }
+
+  @layer utilities {
+    .padding {
+      @apply sm:px-16 px-8 sm:py-24 py-12;
+    }
+  
+    .padding-a {
+      @apply sm:px-32 px-2;
+    }
+  
+    .padding-x {
+      @apply sm:px-16 px-8;
+    }
+  
+    .padding-y {
+      @apply sm:py-16 py-8;
+    }
+  
+    .padding-l {
+      @apply sm:pl-16 pl-8;
+    }
+  
+    .padding-r {
+      @apply sm:pr-16 pr-8;
+    }
+  
+    .padding-t {
+      @apply sm:pt-16 pt-8;
+    }
+  
+    .padding-b {
+      @apply sm:pb-16 pb-8;
+    }
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  
+  .flex-start {
+    @apply flex justify-start items-start;
+  }
+  
+  .flex-end {
+    @apply flex justify-end items-center;
+  }
+  
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
